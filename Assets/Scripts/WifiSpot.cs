@@ -113,9 +113,9 @@ public class WifiSpot : MonoBehaviour {
         isRepairing = false;
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, distanceActivation);
+        Gizmos.DrawWireSphere(transform.position, distanceActivation);
     }
 }
