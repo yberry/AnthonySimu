@@ -13,6 +13,8 @@ public class JaugeEditor : Editor {
     {
         jauge = (Jauge)target;
 
+        jauge.type = (Jauge.Type)EditorGUILayout.EnumPopup("Type", jauge.type);
+
         jauge.image = (Image)EditorGUILayout.ObjectField("Image", jauge.image, typeof(Image), true);
 
         jauge.maxVal = EditorGUILayout.FloatField("Max Value", jauge.maxVal);

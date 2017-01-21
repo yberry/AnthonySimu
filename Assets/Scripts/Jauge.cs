@@ -5,6 +5,16 @@ using UnityEngine.UI;
 
 public class Jauge : MonoBehaviour {
 
+    public enum Type
+    {
+        None,
+        Flemme,
+        BandePassante,
+        Mecontentement
+    }
+
+    public Type type;
+
     public Image image;
     public float maxVal;
     public float startVal;
@@ -68,12 +78,52 @@ public class Jauge : MonoBehaviour {
         }
     }
 
+    static Jauge flemme;
+    public static Jauge Flemme
+    {
+        get
+        {
+            return flemme;
+        }
+    }
+    static Jauge bandePassante;
+    public static Jauge BandePassante
+    {
+        get
+        {
+            return bandePassante;
+        }
+    }
+    static Jauge mecontentement;
+    public static Jauge Mecontentement
+    {
+        get
+        {
+            return flemme;
+        }
+    }
+
     void Start()
     {
         image.type = Image.Type.Filled;
         fillColor = image.color;
         TargetVal = startVal;
         CurrentVal = startVal;
+
+        switch (type)
+        {
+            case Type.Flemme:
+                flemme = this;
+                break;
+
+            case Type.BandePassante:
+                bandePassante = this;
+                break;
+
+            case Type.Mecontentement:
+                mecontentement = this;
+                break;
+        }
     }
 
     void Update()
