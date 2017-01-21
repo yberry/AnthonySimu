@@ -99,7 +99,7 @@ public class Jauge : MonoBehaviour {
     {
         get
         {
-            return flemme;
+            return mecontentement;
         }
     }
 
