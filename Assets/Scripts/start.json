@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Start",
+		"tags": "Anthony",
+		"body": "Anthony:Bonjour, je m'appelle Anthony.\nAnthony:Je suis responsable du réseau wi-fi au sein de l'ENJMIN.\n[[Oui|Oui]]\n[[Non|Non]]",
+		"position": {
+			"x": 215,
+			"y": 186
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Oui",
+		"tags": "",
+		"body": "Natkin:Super !",
+		"position": {
+			"x": 570,
+			"y": 136
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Non",
+		"tags": "",
+		"body": "Thierry:Oh non...",
+		"position": {
+			"x": 544,
+			"y": 431
+		},
+		"colorID": 0
+	}
+]
