@@ -38,19 +38,9 @@ public class PersoDialog : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         IEnumerable<string> nodes = runner.dialogue.allNodes;
         max = nodes.Count(n => n.StartsWith(perso.ToString()));
-
-        StartDialogue();
     }
 
-    void Update()
-    {
-        if (IsNear && !runner.isDialogueRunning)
-        {
-            StartDialogue();
-        }
-    }
-
-    void StartDialogue()
+    public void StartDialogue()
     {
         if (perso != Perso.Anton)
         {
