@@ -7,6 +7,15 @@ public class Jauge : MonoBehaviour {
 
     public Image image;
     public float maxVal;
+    public float startVal;
+
+    public bool immediateUpdate;
+
+    public bool activeIncrease;
+    public float amountIncreaseBySecond = 1f;
+
+    public bool activeDecrease;
+    public float amountDecreaseBySecond = 1f;
 
     public bool activeStartBlinking;
     public float amountStartBlinking;
@@ -29,6 +38,10 @@ public class Jauge : MonoBehaviour {
         set
         {
             targetVal = Mathf.Clamp(value, 0f, maxVal);
+            if (immediateUpdate)
+            {
+                CurrentVal = targetVal;
+            }
         }
     }
     float currentVal;
@@ -59,13 +72,33 @@ public class Jauge : MonoBehaviour {
     {
         image.type = Image.Type.Filled;
         fillColor = image.color;
-        currentVal = maxVal;
+        TargetVal = startVal;
+        CurrentVal = startVal;
     }
 
     void Update()
     {
+        IncreaseOrDecrease();
+
         CurrentVal = Mathf.MoveTowards(currentVal, targetVal, 1f);
 
+        Blink();
+    }
+
+    void IncreaseOrDecrease()
+    {
+        if (activeIncrease)
+        {
+            TargetVal += amountIncreaseBySecond * Time.deltaTime;
+        }
+        else if (activeDecrease)
+        {
+            TargetVal -= amountDecreaseBySecond * Time.deltaTime;
+        }
+    }
+
+    void Blink()
+    {
         if (activeStartBlinking && currentVal < amountStartBlinking)
         {
             float t = (1f + Mathf.Sin(freqStartBlinking * Time.time)) * 0.5f;
@@ -82,7 +115,7 @@ public class Jauge : MonoBehaviour {
         }
     }
 
-    public void Add(int amount)
+    public void Add(float amount)
     {
         TargetVal += amount;
     }
