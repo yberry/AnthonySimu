@@ -6,11 +6,13 @@ public class CharacterMovement : MonoBehaviour
 {
     public float speed = 2;
 
-    private Vector2 movement;
+    private Vector3 movement;
+
+    private Animator animator;
     // Use this for initialization
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -21,28 +23,26 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        movement = Vector2.zero;
+        movement = Vector3.zero;
 
         movement.x += Input.GetAxisRaw("Horizontal");
 
-        movement.y += Input.GetAxisRaw("Vertical");
+        movement.z += Input.GetAxisRaw("Vertical");
 
-        Debug.Log(movement);
-
-        if (movement != Vector2.zero)
+        if (movement != Vector3.zero)
         {
-            GetComponent<Animator>().SetBool("Walking", true);
-            GetComponent<Animator>().SetFloat("moveX", movement.x);
-            GetComponent<Animator>().SetFloat("moveY", movement.y);
+            animator.SetBool("Walking", true);
+            animator.SetFloat("moveX", movement.x);
+            animator.SetFloat("moveZ", movement.z);
         }
         else
         {
-            GetComponent<Animator>().SetBool("Walking", false);
+            animator.SetBool("Walking", false);
         }
         // follow this pattern
 
         movement *= speed * Time.deltaTime;
 
-        transform.position = new Vector3(transform.position.x + movement.x, transform.position.y + movement.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x + movement.x, transform.position.y, transform.position.z + movement.z);
     }
 }
