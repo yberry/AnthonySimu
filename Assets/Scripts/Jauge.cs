@@ -19,17 +19,39 @@ public class Jauge : MonoBehaviour {
     public Color colorEndBlinking = Color.white;
 
     Color fillColor;
-    float currentVal;
-    public float CurrentVal
+    float targetVal;
+    public float TargetVal
     {
         get
         {
-            return currentVal;
+            return targetVal;
         }
         set
         {
-            currentVal = Mathf.Clamp(value, 0f, maxVal);
+            targetVal = Mathf.Clamp(value, 0f, maxVal);
+        }
+    }
+    float currentVal;
+    float CurrentVal
+    {
+        set
+        {
+            currentVal = value;
             image.fillAmount = currentVal / maxVal;
+        }
+    }
+    public bool IsEmpty
+    {
+        get
+        {
+            return currentVal == 0f;
+        }
+    }
+    public bool IsFull
+    {
+        get
+        {
+            return currentVal == maxVal;
         }
     }
 
@@ -42,21 +64,26 @@ public class Jauge : MonoBehaviour {
 
     void Update()
     {
-        CurrentVal -= 3f * Time.deltaTime;
+        CurrentVal = Mathf.MoveTowards(currentVal, targetVal, 1f);
 
         if (activeStartBlinking && currentVal < amountStartBlinking)
         {
-            float t = (1f + Mathf.Sin(freqStartBlinking * Time.time)) / 2f;
+            float t = (1f + Mathf.Sin(freqStartBlinking * Time.time)) * 0.5f;
             image.color = Color.Lerp(fillColor, colorStartBlinking, t);
         }
         else if (activeEndBlinking && currentVal > amountEndBlinking)
         {
-            float t = (1f + Mathf.Sin(freqEndBlinking * Time.time)) / 2f;
+            float t = (1f + Mathf.Sin(freqEndBlinking * Time.time)) * 0.5f;
             image.color = Color.Lerp(fillColor, colorEndBlinking, t);
         }
         else
         {
             image.color = fillColor;
         }
+    }
+
+    public void Add(int amount)
+    {
+        TargetVal += amount;
     }
 }
