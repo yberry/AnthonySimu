@@ -20,7 +20,7 @@ public class PatrolState : IEnnemyState
     
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && enemy.GetNeedAnton() )
+        if (other.gameObject.CompareTag("Player") && enemy.GetNeedAnton() && !Yarn.Unity.DialogueRunner.runner.isDialogueRunning)
         {
             enemy.chaseTarget = other.transform;
             ToChaseState();
