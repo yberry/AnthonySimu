@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class ListWebsites : MonoBehaviour {
 
     static readonly string[] goodSites = new string[]
@@ -30,14 +31,18 @@ public class ListWebsites : MonoBehaviour {
 
     public List<Button> buttons;
     public float successWait = 1f;
+    public AudioClip clipSuccess;
+    public AudioClip clipFail;
 
     int pornNum;
     ColorBlock baseBlock;
+    AudioSource source;
 
     void Start()
     {
         baseBlock = buttons[0].colors;
         buttons.ForEach(b => b.gameObject.SetActive(false));
+        source = GetComponent<AudioSource>();
     }
 
     public void Show()
@@ -66,6 +71,8 @@ public class ListWebsites : MonoBehaviour {
     public void Click(int index)
     {
         bool found = index == pornNum;
+
+        source.PlayOneShot(found ? clipSuccess : clipFail);
         Color col = found ? Color.green : Color.red;
 
         ColorBlock block = buttons[index].colors;
