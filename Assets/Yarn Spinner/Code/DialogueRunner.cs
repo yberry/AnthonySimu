@@ -69,8 +69,17 @@ namespace Yarn.Unity
 				return _dialogue;
 			}
 		}
+
+        static DialogueRunner _runner;
+        public static DialogueRunner runner
+        {
+            get
+            {
+                return _runner;
+            }
+        }
 		
-		void Start ()
+		void Awake ()
 		{
 			// Ensure that we have our Implementation object
 			if (dialogueUI == null) {
@@ -95,7 +104,9 @@ namespace Yarn.Unity
 			if (startAutomatically) {
 				StartDialogue();
 			}
-		}
+
+            _runner = this;
+        }
 
 		public void AddScript(string text) {
 			dialogue.LoadString(text);
