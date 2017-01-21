@@ -15,9 +15,8 @@ public class DemandState : IEnnemyState
 
     public void UpdateState()
     {
-        
 
-        if(Input.GetKey(KeyCode.Y))
+        if(!Yarn.Unity.DialogueRunner.runner.isDialogueRunning)
         {
             ToWaitForStuffState();
         }
@@ -59,5 +58,4 @@ public class DemandState : IEnnemyState
     {
         
     }
-
 }
