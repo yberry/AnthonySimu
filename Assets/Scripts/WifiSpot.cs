@@ -95,6 +95,9 @@ public class WifiSpot : MonoBehaviour {
             if (jauge.IsFull)
             {
                 repaired = true;
+                Jauge.Flemme.Add(5f);
+                Jauge.BandePassante.Add(15f);
+                Jauge.Mecontentement.Add(-10f);
                 Stop();
             }
         }
