@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PornLoadState : IEnnemyState
+public class WaitForStuffState : IEnnemyState
 {
 
     private readonly StatePatternEnnemy enemy;
     private int nextWayPoint;
 
-    public PornLoadState(StatePatternEnnemy statePatternEnemy)
+    public WaitForStuffState(StatePatternEnnemy statePatternEnemy)
     {
         enemy = statePatternEnemy;
     }
 
     public void UpdateState()
     {
-        PornLoad();
+
+        WaitForStuff();
+        if (IsNear && enemy.player.GetComponent<CharacterMovement>().hasEquipment )
+        {
+            ToPatrolState();
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -26,7 +31,7 @@ public class PornLoadState : IEnnemyState
     public void ToPatrolState()
     {
         enemy.currentState = enemy.patrolState;
-        enemy.SetDisplayPornLoad(false);
+
         // SET WIFI POWER BACK HERE
     }
 
@@ -37,12 +42,12 @@ public class PornLoadState : IEnnemyState
 
     public void ToPornLoadState()
     {
-        Debug.Log("can't transition to pornload from pornload");
+
     }
 
     public void ToDemandState()
     {
-
+        Debug.Log("can't transition to demand from demand");
     }
 
     public void ToWaitForStuffState()
@@ -50,10 +55,19 @@ public class PornLoadState : IEnnemyState
 
     }
 
-    private void PornLoad()
+    private void WaitForStuff()
     {
         enemy.navMeshAgent.destination = enemy.studentComputer.position;
         enemy.navMeshAgent.Resume();
     }
 
+    bool IsNear
+    {
+        get
+        {
+            Vector3 diff = enemy.transform.position - enemy.chaseTarget.position;
+            diff.y = 0f;
+            return diff.magnitude <= 0.5;
+        }
+    }
 }

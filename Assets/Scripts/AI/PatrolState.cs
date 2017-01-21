@@ -20,7 +20,7 @@ public class PatrolState : IEnnemyState
     
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && enemy.GetNeedAnton())
+        if (other.gameObject.CompareTag("Player") && enemy.GetNeedAnton() )
         {
             enemy.chaseTarget = other.transform;
             ToChaseState();
@@ -45,6 +45,11 @@ public class PatrolState : IEnnemyState
     }
 
     public void ToDemandState()
+    {
+
+    }
+
+    public void ToWaitForStuffState()
     {
 
     }

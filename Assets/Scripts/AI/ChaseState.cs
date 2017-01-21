@@ -47,6 +47,11 @@ public class ChaseState : IEnnemyState
 
     }
 
+    public void ToWaitForStuffState()
+    {
+
+    }
+
     private void Chase()
     {
         enemy.navMeshAgent.destination = enemy.chaseTarget.position;

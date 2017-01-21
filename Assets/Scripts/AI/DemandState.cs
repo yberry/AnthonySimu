@@ -15,11 +15,11 @@ public class DemandState : IEnnemyState
 
     public void UpdateState()
     {
-        Debug.Log("ON EST EN DEMANDE!!!!");
+        
 
         if(Input.GetKey(KeyCode.Y))
         {
-
+            ToWaitForStuffState();
         }
     }
 
@@ -48,6 +48,11 @@ public class DemandState : IEnnemyState
     public void ToDemandState()
     {
         Debug.Log("can't transition to demand from demand");
+    }
+
+    public void ToWaitForStuffState()
+    {
+        enemy.currentState = enemy.waitForStuffState;
     }
 
     private void Demand()

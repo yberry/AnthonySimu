@@ -28,6 +28,9 @@ public class StatePatternEnnemy : MonoBehaviour {
     public DemandState demandState;
 
     [HideInInspector]
+    public WaitForStuffState waitForStuffState;
+
+    [HideInInspector]
     public NavMeshAgent navMeshAgent;
 
     Animator animator;
@@ -37,17 +40,22 @@ public class StatePatternEnnemy : MonoBehaviour {
     SpriteRenderer stateIcon;// ca et en dessous c'est degueu
     Animator stateAnim;
 
+    [HideInInspector]
+    public Transform player;
+
     private void Awake()
     {
         chaseState = new ChaseState (this);
         patrolState = new PatrolState (this);
         pornLoadState = new PornLoadState(this);
         demandState = new DemandState(this);
+        waitForStuffState = new WaitForStuffState(this);
 
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         stateIcon = transform.FindChild("StateIcon").GetComponent<SpriteRenderer>();
         stateAnim = transform.FindChild("StateIcon").GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Use this for initialization

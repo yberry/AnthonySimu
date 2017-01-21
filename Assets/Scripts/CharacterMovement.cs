@@ -9,6 +9,8 @@ public class CharacterMovement : MonoBehaviour
     private Vector3 movement;
 
     private Animator animator;
+
+    public bool hasEquipment = false;
     // Use this for initialization
     void Start()
     {

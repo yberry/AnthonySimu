@@ -95,7 +95,7 @@ public class StudentManager : MonoBehaviour
 
     GameObject GetInactiveStudent()
     {
-        int i = Random.Range(0, students.Length - 1);
+        int i = Random.Range(0, students.Length);
         bool found = false;
         int iterations = 0;
         while (found != true)
