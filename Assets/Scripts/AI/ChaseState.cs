@@ -14,14 +14,16 @@ public class ChaseState : IEnnemyState
     public void UpdateState()
     {
         Chase();
+        if(IsNear)
+        {
+            ToDemandState();
+        }
+
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            ToChaseState();
-        }
+
     }
 
     public void ToPatrolState()
@@ -36,13 +38,33 @@ public class ChaseState : IEnnemyState
 
     public void ToPornLoadState()
     {
-        enemy.currentState = enemy.pornLoadState;
-        // on baisse le debit ICI
+
+    }
+
+    public void ToDemandState()
+    {
+        enemy.currentState = enemy.demandState;
+
+    }
+
+    public void ToWaitForStuffState()
+    {
+
     }
 
     private void Chase()
     {
         enemy.navMeshAgent.destination = enemy.chaseTarget.position;
         enemy.navMeshAgent.Resume();
+    }
+
+    bool IsNear
+    {
+        get
+        {
+            Vector3 diff = enemy.transform.position - enemy.chaseTarget.position;
+            diff.y = 0f;
+            return diff.magnitude <= 0.5;
+        }
     }
 }
