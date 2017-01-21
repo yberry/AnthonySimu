@@ -89,7 +89,7 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
             yield return null;
         }
 
-        lineText.gameObject.SetActive(false);
+        //lineText.gameObject.SetActive(false);
 
         if (continuePrompt != null)
         {
@@ -123,6 +123,11 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
 
     public void SetOption(int selectedOption)
     {
+        if (selectedOption == 1)
+        {
+            Jauge.Mecontentement.Add(15f);
+        }
+
         setSelectedOption(selectedOption);
 
         setSelectedOption = null;

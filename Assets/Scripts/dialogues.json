@@ -2,80 +2,80 @@
 	{
 		"title": "Eleve0",
 		"tags": "",
-		"body": "Elève:Antooooon, j'peux avoir un câble déter-net ?",
+		"body": "Elève:Antooooon, j'peux avoir un câble déter-net ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 1261,
-			"y": -140
+			"x": 1437,
+			"y": -66
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Eleve1",
 		"tags": "",
-		"body": "Elève:Dis Anton, je peux avoir une manette de 3 6 ?",
+		"body": "Elève:Dis Anton, je peux avoir une manette de 3 6 ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": -303,
-			"y": -138
+			"x": -127,
+			"y": -64
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Eleve2",
 		"tags": "",
-		"body": "Elève:ANTON !!! J'peux avoir une multiprise option raclette ?",
+		"body": "Elève:ANTON !!! J'peux avoir une multiprise option raclette ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": -80,
-			"y": -136
+			"x": 96,
+			"y": -62
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Eleve3",
 		"tags": "",
-		"body": "Elève:Antooooooon. Tu peux me rapporter une pizza 4 frometons ?",
+		"body": "Elève:Antooooooon. Tu peux me rapporter une pizza 4 frometons ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 139,
-			"y": -135
+			"x": 315,
+			"y": -61
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Eleve4",
 		"tags": "",
-		"body": "Elève:Anton, j'peux avoir le mot de passe admin' pour installer la police \"Naruto\" ?",
+		"body": "Elève:Anton, j'peux avoir le mot de passe admin' pour installer la police \"Naruto\" ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 362,
-			"y": -138
+			"x": 538,
+			"y": -64
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Eleve5",
 		"tags": "",
-		"body": "Elève:Hé, j'peux avoir un peu de came, s'te plé ? *sniff*",
+		"body": "Elève:Hé, j'peux avoir un peu de came, s'te plé ? *sniff*\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 590,
-			"y": -139
+			"x": 766,
+			"y": -65
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Eleve6",
 		"tags": "",
-		"body": "Elève:Anton, j'peux avoir un Vive pour faire du cerf-volant ?",
+		"body": "Elève:Anton, j'peux avoir un Vive pour faire du cerf-volant ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 816,
-			"y": -139
+			"x": 992,
+			"y": -65
 		},
 		"colorID": 1
 	},
 	{
 		"title": "Eleve7",
 		"tags": "",
-		"body": "Elève:ANTON ! J'peux avoir du respect, s'te plé ?",
+		"body": "Elève:ANTON ! J'peux avoir du respect, s'te plé ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 1034,
-			"y": -138
+			"x": 1210,
+			"y": -64
 		},
 		"colorID": 1
 	},
@@ -84,8 +84,8 @@
 		"tags": "",
 		"body": "Natking:Miam Miam",
 		"position": {
-			"x": 137,
-			"y": 98
+			"x": 313,
+			"y": 172
 		},
 		"colorID": 2
 	},
@@ -94,8 +94,8 @@
 		"tags": "",
 		"body": "Natking:J'ai pas compris",
 		"position": {
-			"x": -301,
-			"y": 97
+			"x": -125,
+			"y": 171
 		},
 		"colorID": 2
 	},
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "Natking:Hin Hin Hin Hin",
 		"position": {
-			"x": -80,
-			"y": 98
+			"x": 96,
+			"y": 172
 		},
 		"colorID": 2
 	},
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "Natking:Je vous ai déjà parlé du minitel ?",
 		"position": {
-			"x": 364,
-			"y": 98
+			"x": 540,
+			"y": 172
 		},
 		"colorID": 2
 	},
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "TitiPenaud:Un Vin d'Orge ?",
 		"position": {
-			"x": 138,
-			"y": 322
+			"x": 314,
+			"y": 396
 		},
 		"colorID": 3
 	},
@@ -134,8 +134,8 @@
 		"tags": "",
 		"body": "Titi Penaud:Allez, viens voir les projets !",
 		"position": {
-			"x": -300,
-			"y": 322
+			"x": -124,
+			"y": 396
 		},
 		"colorID": 3
 	},
@@ -144,8 +144,8 @@
 		"tags": "",
 		"body": "Titi Penaud:Une p'tite partie de NES ?",
 		"position": {
-			"x": -79,
-			"y": 323
+			"x": 97,
+			"y": 397
 		},
 		"colorID": 3
 	},
@@ -154,8 +154,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Un p'tit verre ?",
 		"position": {
-			"x": 137,
-			"y": 550
+			"x": 313,
+			"y": 624
 		},
 		"colorID": 6
 	},
@@ -164,8 +164,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Aaaaaaaah, vous me rappelez Dali !",
 		"position": {
-			"x": -300,
-			"y": 550
+			"x": -124,
+			"y": 624
 		},
 		"colorID": 6
 	},
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Alors ma petite, comment allez-vous ?",
 		"position": {
-			"x": -77,
-			"y": 550
+			"x": 99,
+			"y": 624
 		},
 		"colorID": 6
 	},
@@ -184,8 +184,8 @@
 		"tags": "",
 		"body": "Anton:Tin les relous, ils sont encore allés se plaindre à l'admin' !",
 		"position": {
-			"x": 140,
-			"y": 780
+			"x": 316,
+			"y": 854
 		},
 		"colorID": 4
 	},
@@ -194,8 +194,8 @@
 		"tags": "",
 		"body": "Anton:Ils m'ont gavé ces bledards, j'me casse !",
 		"position": {
-			"x": -297,
-			"y": 777
+			"x": -121,
+			"y": 851
 		},
 		"colorID": 4
 	},
@@ -204,9 +204,29 @@
 		"tags": "",
 		"body": "Anton:Il me les pète le WIFI !",
 		"position": {
-			"x": -76,
-			"y": 779
+			"x": 100,
+			"y": 853
 		},
 		"colorID": 4
+	},
+	{
+		"title": "Oui",
+		"tags": "",
+		"body": "Super ! Merci :D",
+		"position": {
+			"x": 1012,
+			"y": 184
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Non",
+		"tags": "",
+		"body": "J'vais me plaindre à l'administration !",
+		"position": {
+			"x": 1009,
+			"y": 427
+		},
+		"colorID": 0
 	}
 ]

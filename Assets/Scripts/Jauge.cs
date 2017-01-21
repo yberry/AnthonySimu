@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Jauge : MonoBehaviour {
 
@@ -55,12 +56,17 @@ public class Jauge : MonoBehaviour {
         }
     }
     float currentVal;
-    float CurrentVal
+    public float CurrentVal
     {
-        set
+        get
+        {
+            return currentVal;
+        }
+        private set
         {
             currentVal = value;
             image.fillAmount = currentVal / maxVal;
+            CheckGameOver();
         }
     }
     public bool IsEmpty
@@ -75,6 +81,27 @@ public class Jauge : MonoBehaviour {
         get
         {
             return currentVal == maxVal;
+        }
+    }
+    bool StartCritical
+    {
+        get
+        {
+            return activeStartBlinking && currentVal < amountStartBlinking;
+        }
+    }
+    bool EndCritical
+    {
+        get
+        {
+            return activeEndBlinking && currentVal > amountEndBlinking;
+        }
+    }
+    public bool IsCritical
+    {
+        get
+        {
+            return StartCritical || EndCritical;
         }
     }
 
@@ -149,12 +176,12 @@ public class Jauge : MonoBehaviour {
 
     void Blink()
     {
-        if (activeStartBlinking && currentVal < amountStartBlinking)
+        if (StartCritical)
         {
             float t = (1f + Mathf.Sin(freqStartBlinking * Time.time)) * 0.5f;
             image.color = Color.Lerp(fillColor, colorStartBlinking, t);
         }
-        else if (activeEndBlinking && currentVal > amountEndBlinking)
+        else if (EndCritical)
         {
             float t = (1f + Mathf.Sin(freqEndBlinking * Time.time)) * 0.5f;
             image.color = Color.Lerp(fillColor, colorEndBlinking, t);
@@ -168,5 +195,25 @@ public class Jauge : MonoBehaviour {
     public void Add(float amount)
     {
         TargetVal += amount;
+    }
+
+    void CheckGameOver()
+    {
+        if (flemme.IsFull || bandePassante.IsEmpty || mecontentement.IsFull)
+        {
+            if (flemme.IsFull)
+            {
+                PlayerPrefs.SetString("Over", "Anton1");
+            }
+            else if (bandePassante.IsEmpty)
+            {
+                PlayerPrefs.SetString("Over", "Anton2");
+            }
+            else if (mecontentement.IsFull)
+            {
+                PlayerPrefs.SetString("Over", "Anton0");
+            }
+            SceneManager.LoadScene("Over");
+        }
     }
 }
