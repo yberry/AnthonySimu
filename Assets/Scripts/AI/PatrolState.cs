@@ -20,7 +20,7 @@ public class PatrolState : IEnnemyState
     
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && enemy.GetNeedAnton())
         {
             enemy.chaseTarget = other.transform;
             ToChaseState();
@@ -40,7 +40,13 @@ public class PatrolState : IEnnemyState
     public void ToPornLoadState()
     {
         enemy.currentState = enemy.pornLoadState;
+        enemy.SetDisplayPornLoad(true);
         // on baisse le debit ICI
+    }
+
+    public void ToDemandState()
+    {
+
     }
 
     void Patrol()

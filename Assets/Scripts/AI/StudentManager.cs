@@ -66,25 +66,29 @@ public class StudentManager : MonoBehaviour
             yield return new WaitForSeconds(studentPlanning[nextPlanning].timeToNext);
 
             Debug.Log("Picking student for activity");
-            switch (studentPlanning[nextPlanning].activity)
+            GameObject freeStudent = GetInactiveStudent();
+
+            if (freeStudent != null)
             {
-                case ActivityTypes.pornLoad:
+                switch (studentPlanning[nextPlanning].activity)
+                {
+                    case ActivityTypes.pornLoad:
 
-                    GameObject freeStudent = GetInactiveStudent();
-                    if (freeStudent != null)
-                    {
-                        freeStudent.GetComponent<StatePatternEnnemy>().currentState.ToPornLoadState();
-                        pornStudents.Add( freeStudent );
-                        isPornLoading = true;
-                    }
-                    break;
+                            freeStudent.GetComponent<StatePatternEnnemy>().currentState.ToPornLoadState();
+                            pornStudents.Add(freeStudent);
+                            isPornLoading = true;
+                        
+                        break;
 
-                case ActivityTypes.demand:
+                    case ActivityTypes.demand:
 
-                    break;
+                            freeStudent.GetComponent<StatePatternEnnemy>().setNeedAnton(true);
+                            demandStudents.Add(freeStudent);
+                        
+                        break;
+                }
             }
 
-            Debug.Log(pornStudents[0]);
             nextPlanning = (nextPlanning + 1) % studentPlanning.Length;
         }
     }

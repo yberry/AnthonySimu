@@ -14,4 +14,6 @@ public interface IEnnemyState
 
     void ToChaseState();
 
+    void ToDemandState();
+
 }

@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PornLoadState : IEnnemyState
+public class DemandState : IEnnemyState
 {
 
     private readonly StatePatternEnnemy enemy;
     private int nextWayPoint;
 
-    public PornLoadState(StatePatternEnnemy statePatternEnemy)
+    public DemandState(StatePatternEnnemy statePatternEnemy)
     {
         enemy = statePatternEnemy;
     }
 
     public void UpdateState()
     {
-        PornLoad();
+        Debug.Log("ON EST EN DEMANDE!!!!");
+
+        if(Input.GetKey(KeyCode.Y))
+        {
+
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -26,7 +31,7 @@ public class PornLoadState : IEnnemyState
     public void ToPatrolState()
     {
         enemy.currentState = enemy.patrolState;
-        enemy.SetDisplayPornLoad(false);
+
         // SET WIFI POWER BACK HERE
     }
 
@@ -37,18 +42,17 @@ public class PornLoadState : IEnnemyState
 
     public void ToPornLoadState()
     {
-        Debug.Log("can't transition to pornload from pornload");
+        
     }
 
     public void ToDemandState()
     {
-
+        Debug.Log("can't transition to demand from demand");
     }
 
-    private void PornLoad()
+    private void Demand()
     {
-        enemy.navMeshAgent.destination = enemy.studentComputer.position;
-        enemy.navMeshAgent.Resume();
+        
     }
 
 }
