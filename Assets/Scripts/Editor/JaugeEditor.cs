@@ -21,6 +21,26 @@ public class JaugeEditor : Editor {
             jauge.maxVal = 0f;
         }
 
+        jauge.startVal = EditorGUILayout.Slider("Start Value", jauge.startVal, 0f, jauge.maxVal);
+
+        jauge.immediateUpdate = EditorGUILayout.Toggle("Immediate Update", jauge.immediateUpdate);
+
+        jauge.activeIncrease = EditorGUILayout.BeginToggleGroup("Active Increase", jauge.activeIncrease);
+        jauge.amountIncreaseBySecond = EditorGUILayout.FloatField("Amount Increase By Second", jauge.amountIncreaseBySecond);
+        if (jauge.amountIncreaseBySecond < 0f)
+        {
+            jauge.amountIncreaseBySecond = 0f;
+        }
+        EditorGUILayout.EndToggleGroup();
+
+        jauge.activeDecrease = EditorGUILayout.BeginToggleGroup("Active Decrease", jauge.activeDecrease);
+        jauge.amountDecreaseBySecond = EditorGUILayout.FloatField("Amount Decrease By Second", jauge.amountDecreaseBySecond);
+        if (jauge.amountDecreaseBySecond < 0f)
+        {
+            jauge.amountDecreaseBySecond = 0f;
+        }
+        EditorGUILayout.EndToggleGroup();
+
         jauge.activeStartBlinking = EditorGUILayout.BeginToggleGroup("Active Start Blinking", jauge.activeStartBlinking);
         jauge.amountStartBlinking = EditorGUILayout.Slider("Amount Start Blinking", jauge.amountStartBlinking, 0f, jauge.maxVal);
         jauge.freqStartBlinking = EditorGUILayout.FloatField("Freq Start Blinking", jauge.freqStartBlinking);
