@@ -72,8 +72,7 @@ public class ListWebsites : MonoBehaviour {
     {
         bool found = index == pornNum;
 
-        source.clip = found ? clipSuccess : clipFail;
-        source.PlayOneShot();
+        source.PlayOneShot(found ? clipSuccess : clipFail);
         Color col = found ? Color.green : Color.red;
 
         ColorBlock block = buttons[index].colors;
