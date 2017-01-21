@@ -20,12 +20,14 @@ public class StudentManager : MonoBehaviour
     }
 
     private GameObject[] students;
-    private GameObject pornStudent, demandStudent;
+
+    List<GameObject> pornStudents;
+    List<GameObject> demandStudents;
 
     public Activity[] studentPlanning;
     private int nextPlanning = 0;
 
-    public
+    public bool isPornLoading = false;
 
     // Use this for initialization
     void Start()
@@ -33,12 +35,28 @@ public class StudentManager : MonoBehaviour
         students = GameObject.FindGameObjectsWithTag("Student");
 
         StartCoroutine(NextEvent());
+
+        pornStudents = new List<GameObject>();
+        demandStudents = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    public void StopPornStudents()
+    {
+        foreach (GameObject pornStudent in pornStudents)
+        {
+            pornStudent.GetComponent<StatePatternEnnemy>().currentState.ToPatrolState();
+        }
+
+        //This clears out the list so that it is
+        //empty.
+        pornStudents.Clear();
+        isPornLoading = false;
     }
 
     IEnumerator NextEvent()
@@ -53,11 +71,11 @@ public class StudentManager : MonoBehaviour
                 case ActivityTypes.pornLoad:
 
                     GameObject freeStudent = GetInactiveStudent();
-                    Debug.Log(freeStudent);
                     if (freeStudent != null)
                     {
                         freeStudent.GetComponent<StatePatternEnnemy>().currentState.ToPornLoadState();
-                        pornStudent = freeStudent;
+                        pornStudents.Add( freeStudent );
+                        isPornLoading = true;
                     }
                     break;
 
@@ -66,6 +84,7 @@ public class StudentManager : MonoBehaviour
                     break;
             }
 
+            Debug.Log(pornStudents[0]);
             nextPlanning = (nextPlanning + 1) % studentPlanning.Length;
         }
     }
@@ -77,7 +96,7 @@ public class StudentManager : MonoBehaviour
         int iterations = 0;
         while (found != true)
         {
-            if (students[i] != pornStudent && students[i] != demandStudent)
+            if ( !pornStudents.Contains(students[i]) && !demandStudents.Contains(students[i]))
             {
                 found = true;
             }

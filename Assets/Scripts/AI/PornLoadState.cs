@@ -25,7 +25,9 @@ public class PornLoadState : IEnnemyState
 
     public void ToPatrolState()
     {
+        enemy.currentState = enemy.patrolState;
 
+        // SET WIFI POWER BACK HERE
     }
 
     public void ToChaseState()
