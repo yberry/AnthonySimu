@@ -26,7 +26,7 @@ public class PornLoadState : IEnnemyState
     public void ToPatrolState()
     {
         enemy.currentState = enemy.patrolState;
-        enemy.SetDisplayPornLoad(false);
+        enemy.SetDisplayNoActivity();
         // SET WIFI POWER BACK HERE
     }
 

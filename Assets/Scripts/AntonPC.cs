@@ -10,6 +10,10 @@ public class AntonPC : MonoBehaviour
     public float distanceActivation;
     public string input = "Fire1";
 
+    public GameObject websites;
+
+    bool websitesOn = false;
+
     void Awake()
     {
         studentManager = GameObject.FindGameObjectWithTag("StudentManager").GetComponent<StudentManager>();
@@ -25,10 +29,18 @@ public class AntonPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis(input) > 0f && IsNear && studentManager.isPornLoading)
+        if (Input.GetAxis(input) > 0f && IsNear && studentManager.isPornLoading && !websitesOn)
         {
-            studentManager.StopPornStudents();
+            websitesOn = true;
+            websites.GetComponent<ListWebsites>().Show();
+            player.GetComponent<CharacterMovement>().canMove = false;
         }
+    }
+
+    public void WinSiteChoice()
+    {
+        studentManager.StopPornStudents();
+        websitesOn = false;
     }
 
     bool IsNear

@@ -19,6 +19,9 @@ public class WaitForStuffState : IEnnemyState
         WaitForStuff();
         if (IsNear && enemy.player.GetComponent<CharacterMovement>().hasEquipment )
         {
+            enemy.SetDisplayNoActivity();
+            GameObject.FindGameObjectWithTag("StudentManager").GetComponent<StudentManager>().RemoveDemandStudent(enemy.gameObject);
+            enemy.setNeedAnton(false);
             ToPatrolState();
         }
     }

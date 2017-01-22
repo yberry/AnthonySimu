@@ -59,6 +59,12 @@ public class StudentManager : MonoBehaviour
         isPornLoading = false;
     }
 
+    public void RemoveDemandStudent(GameObject demandStudent)
+    {
+        demandStudents.Remove(demandStudent);
+        Debug.Log(demandStudents.Count);
+    }
+
     IEnumerator NextEvent()
     {
         while (true)
@@ -95,7 +101,9 @@ public class StudentManager : MonoBehaviour
 
     GameObject GetInactiveStudent()
     {
-        int i = Random.Range(0, students.Length);
+        int i;
+        i = Random.Range(0, students.Length);
+        Debug.Log(i);
         bool found = false;
         int iterations = 0;
         while (found != true)
@@ -109,13 +117,14 @@ public class StudentManager : MonoBehaviour
                 i = (i + 1) % students.Length;
             }
 
-            iterations++;
+            
             if (iterations >= students.Length)
             {
                 return null;
             }
+            iterations++;
         }
-
+        
         return students[i];
     }
 }

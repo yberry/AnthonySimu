@@ -38,7 +38,8 @@ public class StatePatternEnnemy : MonoBehaviour {
 
     bool needAnton = false;
     SpriteRenderer stateIcon;// ca et en dessous c'est degueu
-    Animator stateAnim;
+
+    public Sprite waiting, porn, demand;
 
     [HideInInspector]
     public Transform player;
@@ -54,7 +55,6 @@ public class StatePatternEnnemy : MonoBehaviour {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         stateIcon = transform.FindChild("StateIcon").GetComponent<SpriteRenderer>();
-        stateAnim = transform.FindChild("StateIcon").GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -86,21 +86,33 @@ public class StatePatternEnnemy : MonoBehaviour {
     public void setNeedAnton(bool need)
     {
         needAnton = need;
-        stateIcon.enabled = true;
+        if (need)
+        {
+            SetDisplayDemand();
+        }
     }
 
-    public void SetDisplayPornLoad(bool isDiplay) //used in patrol state!!!!
+    public void SetDisplayPornLoad() //used in patrol state!!!!
     {
-        if(isDiplay)
-        {
-            stateAnim.enabled = true;
-            stateIcon.enabled = true;
-        }
-        else
-        {
-            stateAnim.enabled = false;
-            stateIcon.enabled = false;
-        }
+        stateIcon.enabled = true;
+        stateIcon.sprite = porn;
+    }
+
+    public void SetDisplayDemand()
+    {
+        stateIcon.enabled = true;
+        stateIcon.sprite = demand;
+    }
+
+    public void SetDisplayWaiting()
+    {
+        stateIcon.enabled = true;
+        stateIcon.sprite = waiting;
+    }
+
+    public void SetDisplayNoActivity()
+    {
+        stateIcon.enabled = false;
     }
 
     public bool GetNeedAnton()

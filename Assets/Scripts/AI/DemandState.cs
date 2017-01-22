@@ -15,11 +15,11 @@ public class DemandState : IEnnemyState
 
     public void UpdateState()
     {
-        
-
-        if(Input.GetKey(KeyCode.Y))
+        if(!Yarn.Unity.DialogueRunner.runner.isDialogueRunning)
         {
             ToWaitForStuffState();
+            enemy.player.GetComponent<CharacterMovement>().canMove = true;
+            enemy.SetDisplayWaiting();
         }
     }
 
@@ -59,5 +59,4 @@ public class DemandState : IEnnemyState
     {
         
     }
-
 }
