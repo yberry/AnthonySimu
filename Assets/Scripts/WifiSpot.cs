@@ -81,6 +81,8 @@ public class WifiSpot : MonoBehaviour {
     {
         if (Input.GetAxis(input) > 0f && IsNear)
         {
+            player.GetComponent<CharacterMovement>().repairing = true;
+            player.GetComponent<CharacterMovement>().canMove = false;
             isRepairing = true;
             jauge.gameObject.SetActive(true);
             source.Play();
@@ -109,6 +111,8 @@ public class WifiSpot : MonoBehaviour {
 
     void Stop()
     {
+        player.GetComponent<CharacterMovement>().repairing = false;
+        player.GetComponent<CharacterMovement>().canMove = true;
         jauge.TargetVal = 0f;
         jauge.gameObject.SetActive(false);
         source.Stop();

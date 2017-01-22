@@ -14,6 +14,13 @@ public class CharacterMovement : MonoBehaviour
 
     public bool canMove = true;
 
+    public bool repairing = false;
+
+    public SpriteRenderer box;
+
+    void Awake()
+    {
+    }
     // Use this for initialization
     void Start()
     {
@@ -55,6 +62,16 @@ public class CharacterMovement : MonoBehaviour
         else
         {
             animator.SetBool("Walking", false);
+        }
+        animator.SetBool("Repairing", repairing);
+
+        if(hasEquipment)
+        {
+            box.enabled = true;
+        }
+        else
+        {
+            box.enabled = false;
         }
     }
 }
