@@ -33,6 +33,7 @@ public class ListWebsites : MonoBehaviour {
     public float successWait = 1f;
     public AudioClip clipSuccess;
     public AudioClip clipFail;
+    public GameObject antonPC;
 
     int pornNum;
     ColorBlock baseBlock;
@@ -99,6 +100,7 @@ public class ListWebsites : MonoBehaviour {
 
         yield return new WaitForSeconds(successWait);
 
+        antonPC.GetComponent<AntonPC>().WinSiteChoice();
         foreach (Button button in buttons)
         {
             button.colors = baseBlock;
