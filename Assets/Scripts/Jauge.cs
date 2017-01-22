@@ -150,7 +150,8 @@ public class Jauge : MonoBehaviour {
         image.type = Image.Type.Filled;
         fillColor = image.color;
         TargetVal = startVal;
-        CurrentVal = startVal;
+        currentVal = startVal;
+        image.fillAmount = currentVal / maxVal;
     }
 
     void Update()
