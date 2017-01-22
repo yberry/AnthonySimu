@@ -149,7 +149,7 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
         {
             source.PlayOneShot(thanksClips[UnityEngine.Random.Range(0, thanksClips.Length)]);
         }
-        else
+        else if (selectedOption == 1)
         {
             Jauge.Mecontentement.Add(15f);
         }
