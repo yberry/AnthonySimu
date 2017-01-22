@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EquipmentStash : MonoBehaviour
-{
+public class SafeZone : MonoBehaviour {
 
     Transform player;
     public float distanceActivation;
@@ -12,11 +11,12 @@ public class EquipmentStash : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        StartCoroutine(ReleaseStress());
     }
     // Use this for initialization
     void Start()
     {
-
     }
 
     void OnDrawGizmos()
@@ -24,13 +24,22 @@ public class EquipmentStash : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, distanceActivation);
     }
+
+    IEnumerator ReleaseStress()
+    {
+        while (true)
+        {
+            if (IsNear)
+            {
+                Jauge.Flemme.Add(-5);
+            }
+            yield return new WaitForSeconds(1f);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis(input) > 0f && IsNear)
-        {
-            player.GetComponent<CharacterMovement>().hasEquipment = true;
-        }
+        
     }
 
     bool IsNear

@@ -26,6 +26,12 @@ public class AntonPC : MonoBehaviour
 
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, distanceActivation);
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -29,7 +29,7 @@ public class TalkingState : IAdminState
 
     public void ToWanderState()
     {
-        admin.currentState = admin.talkingState;
+        admin.currentState = admin.wanderState;
     }
 
     public void ToTalkingState()
