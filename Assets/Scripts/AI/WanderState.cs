@@ -22,6 +22,8 @@ public class WanderState : IAdminState
     {
         if (other.gameObject.CompareTag("Player") && !Yarn.Unity.DialogueRunner.runner.isDialogueRunning)
         {
+            admin.epicMusic.volume = 0;
+            admin.GetComponent<AudioSource>().Play();
             admin.navMeshAgent.destination = admin.player.position;
             admin.GetComponent<PersoDialog>().StartDialogue();
             admin.player.GetComponent<CharacterMovement>().canMove = false;

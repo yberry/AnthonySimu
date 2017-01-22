@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class StatePatternAdmin : MonoBehaviour
 {
 
+    public AudioSource epicMusic;
     public float sightRange = 20;
     public Transform[] wayPoints;
 

@@ -17,6 +17,8 @@ public class TalkingState : IAdminState
     {
         if (!Yarn.Unity.DialogueRunner.runner.isDialogueRunning )
         {
+            admin.epicMusic.volume = 0.2f;
+            admin.GetComponent<AudioSource>().Stop();
             admin.player.GetComponent<CharacterMovement>().canMove = true;
             ToWanderState();
         }
