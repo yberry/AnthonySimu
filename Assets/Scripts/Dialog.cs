@@ -60,7 +60,6 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
         {
             animator.SetTrigger(fullLine[0]);
         }
-        perso.SetNativeSize();
 
         fullLine.RemoveAt(0);
         string text = string.Join(":", fullLine.ToArray());
