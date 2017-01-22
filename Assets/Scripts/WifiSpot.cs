@@ -84,7 +84,6 @@ public class WifiSpot : MonoBehaviour {
             isRepairing = true;
             jauge.gameObject.SetActive(true);
             source.Play();
-            //Block player
         }
     }
 
@@ -104,14 +103,13 @@ public class WifiSpot : MonoBehaviour {
         }
         else
         {
-            //Release player
-            jauge.TargetVal = 0f;
             Stop();
         }
     }
 
     void Stop()
     {
+        jauge.TargetVal = 0f;
         jauge.gameObject.SetActive(false);
         source.Stop();
         isRepairing = false;
