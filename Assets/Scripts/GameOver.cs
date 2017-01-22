@@ -8,7 +8,7 @@ public class GameOver : MonoBehaviour {
 
     void Start()
     {
-        DialogueRunner.runner.StartDialogue(PlayerPrefs.GetString("Over"));
+        DialogueRunner.runner.StartDialogue("Anton0"); //PlayerPrefs.GetString("Over"));
     }
 
     void Update()

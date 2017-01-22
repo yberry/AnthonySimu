@@ -58,9 +58,8 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
         nameText.text = fullLine[0];
         if (dico.ContainsKey(fullLine[0]))
         {
-            animator.SetTrigger(fullLine[0]);
+            animator.SetTrigger(dico[fullLine[0]]);
         }
-        perso.SetNativeSize();
 
         fullLine.RemoveAt(0);
         string text = string.Join(":", fullLine.ToArray());
