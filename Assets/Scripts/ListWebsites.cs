@@ -26,7 +26,9 @@ public class ListWebsites : MonoBehaviour {
         "xYoshi",
         "LubriSoft",
         "Ankama-sutra",
-        "VRPorn"
+        "VRPorn",
+        "Limbro",
+        "adopteunprog.com"
     };
 
     public List<Button> buttons;
