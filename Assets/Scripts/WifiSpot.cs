@@ -38,6 +38,7 @@ public class WifiSpot : MonoBehaviour {
         sprite = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         jauge.gameObject.SetActive(false);
+        StartCoroutine(Reactive());
     }
 
     void Update()
@@ -120,5 +121,18 @@ public class WifiSpot : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, distanceActivation);
+    }
+
+    IEnumerator Reactive()
+    {
+        while (true)
+        {
+            if (repaired && Random.Range(0f, Jauge.BandePassante.maxVal) >= Jauge.BandePassante.CurrentVal)
+            {
+                repaired = false;
+            }
+
+            yield return new WaitForSeconds(5f);
+        }
     }
 }
