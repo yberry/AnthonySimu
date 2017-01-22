@@ -7,6 +7,8 @@ public class WaitForStuffState : IEnnemyState
 
     private readonly StatePatternEnnemy enemy;
     private int nextWayPoint;
+    float timer = 10;
+
 
     public WaitForStuffState(StatePatternEnnemy statePatternEnemy)
     {
@@ -15,13 +17,26 @@ public class WaitForStuffState : IEnnemyState
 
     public void UpdateState()
     {
-
-        WaitForStuff();
-        if (IsNear && enemy.player.GetComponent<CharacterMovement>().hasEquipment )
+        timer -= Time.deltaTime;
+        if(timer < 0)
         {
+            timer = 10;
+            Jauge.Mecontentement.Add(10f);
             enemy.SetDisplayNoActivity();
             GameObject.FindGameObjectWithTag("StudentManager").GetComponent<StudentManager>().RemoveDemandStudent(enemy.gameObject);
             enemy.setNeedAnton(false);
+            ToPatrolState();
+        }
+        WaitForStuff();
+        if (IsNear && enemy.player.GetComponent<CharacterMovement>().hasEquipment )
+        {
+            timer = 10;
+            Jauge.Mecontentement.Add(-10f);
+            Jauge.Flemme.Add(10f);
+            enemy.SetDisplayNoActivity();
+            GameObject.FindGameObjectWithTag("StudentManager").GetComponent<StudentManager>().RemoveDemandStudent(enemy.gameObject);
+            enemy.setNeedAnton(false);
+            enemy.player.GetComponent<CharacterMovement>().hasEquipment = false;
             ToPatrolState();
         }
     }

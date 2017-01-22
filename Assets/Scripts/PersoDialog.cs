@@ -42,10 +42,7 @@ public class PersoDialog : MonoBehaviour {
 
     public void StartDialogue()
     {
-        if (perso != Perso.Anton)
-        {
-            Jauge.Flemme.Add(10f);
-        }
+
         int num = Random.Range(0, max);
         runner.StartDialogue(perso.ToString() + num.ToString());
     }

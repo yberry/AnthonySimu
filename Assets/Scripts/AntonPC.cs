@@ -41,6 +41,7 @@ public class AntonPC : MonoBehaviour
     {
         studentManager.StopPornStudents();
         websitesOn = false;
+        player.GetComponent<CharacterMovement>().canMove = true;
     }
 
     bool IsNear
