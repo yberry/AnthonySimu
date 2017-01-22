@@ -22,6 +22,7 @@ public class PatrolState : IEnnemyState
     {
         if (other.gameObject.CompareTag("Player") && enemy.GetNeedAnton() && !Yarn.Unity.DialogueRunner.runner.isDialogueRunning)
         {
+            enemy.player.GetComponent<CharacterMovement>().canMove = false;
             enemy.chaseTarget = other.transform;
             ToChaseState();
         }
@@ -40,7 +41,7 @@ public class PatrolState : IEnnemyState
     public void ToPornLoadState()
     {
         enemy.currentState = enemy.pornLoadState;
-        enemy.SetDisplayPornLoad(true);
+        enemy.SetDisplayPornLoad();
         // on baisse le debit ICI
     }
 

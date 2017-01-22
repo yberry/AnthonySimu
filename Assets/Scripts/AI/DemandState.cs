@@ -15,10 +15,11 @@ public class DemandState : IEnnemyState
 
     public void UpdateState()
     {
-
         if(!Yarn.Unity.DialogueRunner.runner.isDialogueRunning)
         {
             ToWaitForStuffState();
+            enemy.player.GetComponent<CharacterMovement>().canMove = true;
+            enemy.SetDisplayWaiting();
         }
     }
 

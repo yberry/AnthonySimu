@@ -10,6 +10,8 @@ public class AntonPC : MonoBehaviour
     public float distanceActivation;
     public string input = "Fire1";
 
+    public GameObject websites;
+
     void Awake()
     {
         studentManager = GameObject.FindGameObjectWithTag("StudentManager").GetComponent<StudentManager>();
@@ -27,8 +29,15 @@ public class AntonPC : MonoBehaviour
     {
         if (Input.GetAxis(input) > 0f && IsNear && studentManager.isPornLoading)
         {
-            studentManager.StopPornStudents();
+            player.GetComponent<CharacterMovement>().canMove = false;
+            
+
         }
+    }
+
+    public void WinSiteChoice()
+    {
+        studentManager.StopPornStudents();
     }
 
     bool IsNear

@@ -14,8 +14,9 @@ public class ChaseState : IEnnemyState
     public void UpdateState()
     {
         Chase();
-        if(IsNear)
+        if(IsNear && !Yarn.Unity.DialogueRunner.runner.isDialogueRunning)
         {
+            enemy.GetComponent<PersoDialog>().StartDialogue();
             ToDemandState();
         }
 
