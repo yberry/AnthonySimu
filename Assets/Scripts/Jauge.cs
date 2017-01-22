@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class Jauge : MonoBehaviour {
 
     public enum Type
@@ -38,6 +39,12 @@ public class Jauge : MonoBehaviour {
     public float freqEndBlinking;
     public Color colorEndBlinking = Color.white;
 
+    public AudioClip[] increaseClips;
+    public AudioClip[] decreaseClips;
+    public AudioClip alerteClip;
+
+    bool alerte = false;
+    AudioSource source;
     Color fillColor;
     float targetVal;
     public float TargetVal
@@ -152,6 +159,8 @@ public class Jauge : MonoBehaviour {
         TargetVal = startVal;
         currentVal = startVal;
         image.fillAmount = currentVal / maxVal;
+        source = GetComponent<AudioSource>();
+        source.playOnAwake = false;
     }
 
     void Update()
@@ -196,6 +205,40 @@ public class Jauge : MonoBehaviour {
     public void Add(float amount)
     {
         TargetVal += amount;
+        if (amount >= 15f && increaseClips.Length > 2)
+        {
+            source.PlayOneShot(increaseClips[2]);
+        }
+        else if (amount >= 10f && increaseClips.Length > 1)
+        {
+            source.PlayOneShot(increaseClips[1]);
+        }
+        else if (amount >= 5f && increaseClips.Length > 0)
+        {
+            source.PlayOneShot(increaseClips[0]);
+        }
+        else if (amount <= -15f && decreaseClips.Length > 2)
+        {
+            source.PlayOneShot(decreaseClips[2]);
+        }
+        else if (amount <= -10f && decreaseClips.Length > 1)
+        {
+            source.PlayOneShot(decreaseClips[1]);
+        }
+        else if (amount <= -5f && decreaseClips.Length > 0)
+        {
+            source.PlayOneShot(decreaseClips[0]);
+        }
+
+        if (IsCritical && !alerte)
+        {
+            alerte = true;
+            source.PlayOneShot(alerteClip);
+        }
+        else if (!IsCritical && alerte)
+        {
+            alerte = false;
+        }
     }
 
     void CheckGameOver()

@@ -54,5 +54,23 @@ public class JaugeEditor : Editor {
         jauge.freqEndBlinking = EditorGUILayout.FloatField("Freq End Blinking", jauge.freqEndBlinking);
         jauge.colorEndBlinking = EditorGUILayout.ColorField("Color End Blinking", jauge.colorEndBlinking);
         EditorGUILayout.EndToggleGroup();
+
+        SerializedProperty incClips = serializedObject.FindProperty("increaseClips");
+        EditorGUI.BeginChangeCheck();
+        EditorGUILayout.PropertyField(incClips, true);
+        if (EditorGUI.EndChangeCheck())
+        {
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        SerializedProperty decClips = serializedObject.FindProperty("decreaseClips");
+        EditorGUI.BeginChangeCheck();
+        EditorGUILayout.PropertyField(decClips, true);
+        if (EditorGUI.EndChangeCheck())
+        {
+            serializedObject.ApplyModifiedProperties();
+        }
+
+        jauge.alerteClip = (AudioClip)EditorGUILayout.ObjectField("Alerte Clip", jauge.alerteClip, typeof(AudioClip), true);
     }
 }

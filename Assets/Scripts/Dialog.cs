@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn;
 
+[RequireComponent(typeof(AudioSource))]
 public class Dialog : Yarn.Unity.DialogueUIBehaviour {
 
     public GameObject dialogueContainer;
@@ -24,8 +25,12 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
     }
     public NameSprite[] nameSprites;
 
+    public AudioClip[] convClips;
+    public AudioClip[] thanksClips;
+
     OptionChooser setSelectedOption;
     Dictionary<string, string> dico;
+    AudioSource source;
 
     public float textSpeed = 0.025f;
     public List<Button> optionButtons;
@@ -48,6 +53,9 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
         }
 
         dico = nameSprites.ToDictionary(ns => ns.name, ns => ns.anim);
+        source = GetComponent<AudioSource>();
+        source.playOnAwake = false;
+        source.loop = true;
     }
 
     public override IEnumerator RunLine(Line line)
@@ -64,6 +72,13 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
         fullLine.RemoveAt(0);
         string text = string.Join(":", fullLine.ToArray());
 
+        bool thanks = source.isPlaying;
+        if (!thanks)
+        {
+            source.clip = convClips[UnityEngine.Random.Range(0, convClips.Length)];
+            source.Play();
+        }
+
         if (textSpeed > 0f)
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -78,6 +93,11 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
         else
         {
             lineText.text = text;
+        }
+
+        if (!thanks)
+        {
+            source.Stop();
         }
 
         if (continuePrompt != null)
@@ -124,7 +144,11 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
 
     public void SetOption(int selectedOption)
     {
-        if (selectedOption == 1)
+        if (selectedOption == 0)
+        {
+            source.PlayOneShot(thanksClips[UnityEngine.Random.Range(0, thanksClips.Length)]);
+        }
+        else
         {
             Jauge.Mecontentement.Add(15f);
         }
