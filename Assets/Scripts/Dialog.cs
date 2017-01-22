@@ -11,6 +11,7 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
 
     public GameObject dialogueContainer;
     public Image perso;
+    public Animator animator;
     public Text nameText;
     public Text lineText;
     public GameObject continuePrompt;
@@ -19,12 +20,12 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
     public struct NameSprite
     {
         public string name;
-        public Sprite sprite;
+        public string anim;
     }
     public NameSprite[] nameSprites;
 
     OptionChooser setSelectedOption;
-    Dictionary<string, Sprite> dico;
+    Dictionary<string, string> dico;
 
     public float textSpeed = 0.025f;
     public List<Button> optionButtons;
@@ -46,7 +47,7 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
             continuePrompt.SetActive(false);
         }
 
-        dico = nameSprites.ToDictionary(ns => ns.name, ns => ns.sprite);
+        dico = nameSprites.ToDictionary(ns => ns.name, ns => ns.anim);
     }
 
     public override IEnumerator RunLine(Line line)
@@ -57,8 +58,9 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
         nameText.text = fullLine[0];
         if (dico.ContainsKey(fullLine[0]))
         {
-            perso.sprite = dico[fullLine[0]];
+            animator.SetTrigger(fullLine[0]);
         }
+        perso.SetNativeSize();
 
         fullLine.RemoveAt(0);
         string text = string.Join(":", fullLine.ToArray());

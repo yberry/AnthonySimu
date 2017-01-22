@@ -132,11 +132,6 @@ public class Jauge : MonoBehaviour {
 
     void Start()
     {
-        image.type = Image.Type.Filled;
-        fillColor = image.color;
-        TargetVal = startVal;
-        CurrentVal = startVal;
-
         switch (type)
         {
             case Type.Flemme:
@@ -151,6 +146,11 @@ public class Jauge : MonoBehaviour {
                 mecontentement = this;
                 break;
         }
+
+        image.type = Image.Type.Filled;
+        fillColor = image.color;
+        TargetVal = startVal;
+        CurrentVal = startVal;
     }
 
     void Update()
