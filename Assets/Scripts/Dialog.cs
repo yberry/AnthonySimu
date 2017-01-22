@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Yarn;
+using Yarn.Unity;
 
 [RequireComponent(typeof(AudioSource))]
 public class Dialog : Yarn.Unity.DialogueUIBehaviour {
@@ -144,7 +145,7 @@ public class Dialog : Yarn.Unity.DialogueUIBehaviour {
 
     public void SetOption(int selectedOption)
     {
-        if (selectedOption == 0)
+        if (selectedOption == 0 && DialogueRunner.runner.dialogue.currentNode.StartsWith("Eleve"))
         {
             source.PlayOneShot(thanksClips[UnityEngine.Random.Range(0, thanksClips.Length)]);
         }
