@@ -22,6 +22,7 @@ public class PatrolState : IEnnemyState
     {
         if (other.gameObject.CompareTag("Player") && enemy.GetNeedAnton() && !Yarn.Unity.DialogueRunner.runner.isDialogueRunning)
         {
+            Debug.Log("tamere");
             enemy.player.GetComponent<CharacterMovement>().canMove = false;
             enemy.chaseTarget = other.transform;
             ToChaseState();
