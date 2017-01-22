@@ -4,8 +4,8 @@
 		"tags": "",
 		"body": "Elève:Antooooon, j'peux avoir un câble déter-net ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 88,
-			"y": -463
+			"x": -141,
+			"y": -363
 		},
 		"colorID": 1
 	},
@@ -14,8 +14,8 @@
 		"tags": "",
 		"body": "Elève:Dis Anton, je peux avoir une manette de 3 6 ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 313,
-			"y": -463
+			"x": 84,
+			"y": -363
 		},
 		"colorID": 1
 	},
@@ -24,8 +24,8 @@
 		"tags": "",
 		"body": "Elève:ANTON !!! J'peux avoir une multiprise option raclette ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 536,
-			"y": -461
+			"x": 307,
+			"y": -361
 		},
 		"colorID": 1
 	},
@@ -34,8 +34,8 @@
 		"tags": "",
 		"body": "Elève:Antooooooon. Tu peux me rapporter une pizza 4 frometons ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 755,
-			"y": -460
+			"x": 526,
+			"y": -360
 		},
 		"colorID": 1
 	},
@@ -44,8 +44,8 @@
 		"tags": "",
 		"body": "Elève:Anton, j'peux avoir le mot de passe admin' pour installer la police \"Naruto\" ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 987,
-			"y": -459
+			"x": 758,
+			"y": -359
 		},
 		"colorID": 1
 	},
@@ -54,8 +54,8 @@
 		"tags": "",
 		"body": "Elève:Hé, j'peux avoir un peu de came, s'te plé ? *sniff*\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 1206,
-			"y": -464
+			"x": 977,
+			"y": -364
 		},
 		"colorID": 1
 	},
@@ -64,8 +64,8 @@
 		"tags": "",
 		"body": "Elève:Anton, j'peux avoir un Vive pour faire du cerf-volant ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 1432,
-			"y": -464
+			"x": 1203,
+			"y": -364
 		},
 		"colorID": 1
 	},
@@ -74,8 +74,8 @@
 		"tags": "",
 		"body": "Elève:ANTON ! J'peux avoir du respect, s'te plé ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 1650,
-			"y": -463
+			"x": 1421,
+			"y": -363
 		},
 		"colorID": 1
 	},
@@ -84,8 +84,8 @@
 		"tags": "",
 		"body": "Natking:Miam Miam\n[[???|Natking3]]",
 		"position": {
-			"x": 528,
-			"y": -230
+			"x": 299,
+			"y": -130
 		},
 		"colorID": 2
 	},
@@ -94,8 +94,8 @@
 		"tags": "",
 		"body": "Natking:J'ai pas compris\n[[Quoi donc ?|Natking1]]",
 		"position": {
-			"x": 90,
-			"y": -231
+			"x": -139,
+			"y": -131
 		},
 		"colorID": 2
 	},
@@ -104,8 +104,8 @@
 		"tags": "",
 		"body": "Natking:Hin Hin Hin Hin\n[[Hein ?|Natking2]]",
 		"position": {
-			"x": 311,
-			"y": -230
+			"x": 82,
+			"y": -130
 		},
 		"colorID": 2
 	},
@@ -114,8 +114,8 @@
 		"tags": "",
 		"body": "Natking:Je vous ai déjà parlé du minitel ?\n[[Beaucoup trop !|Natking4]]",
 		"position": {
-			"x": 755,
-			"y": -230
+			"x": 526,
+			"y": -130
 		},
 		"colorID": 2
 	},
@@ -124,8 +124,8 @@
 		"tags": "",
 		"body": "Titi Penaud:Une p'tite partie de NES ?\n[[Pourquoi pas.|TitiPenaud3]]",
 		"position": {
-			"x": 529,
-			"y": -6
+			"x": 300,
+			"y": 94
 		},
 		"colorID": 3
 	},
@@ -134,8 +134,8 @@
 		"tags": "",
 		"body": "Titi Penaud:Allez, viens voir les projets !\n[[Pas envie.|TitiPenaud1]]",
 		"position": {
-			"x": 91,
-			"y": -6
+			"x": -138,
+			"y": 94
 		},
 		"colorID": 3
 	},
@@ -144,8 +144,8 @@
 		"tags": "",
 		"body": "Titi Penaud:Un Vin d'Orge ?\n[[Trop loin.|TitiPenaud2]]",
 		"position": {
-			"x": 312,
-			"y": -5
+			"x": 83,
+			"y": 95
 		},
 		"colorID": 3
 	},
@@ -154,8 +154,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Je trouve tout ça absolument formidable !\n[[De quoi ?|ChausseGravier1]]",
 		"position": {
-			"x": 89,
-			"y": 225
+			"x": -140,
+			"y": 325
 		},
 		"colorID": 6
 	},
@@ -164,8 +164,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Aaaaaaaah, vous me rappelez Dali !\n[[Hein ?|ChausseGravier2]]",
 		"position": {
-			"x": 311,
-			"y": 225
+			"x": 82,
+			"y": 325
 		},
 		"colorID": 6
 	},
@@ -174,8 +174,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Alors ma petite, comment allez-vous ?\n[[Lâchez-moi !|ChausseGravier3]]",
 		"position": {
-			"x": 525,
-			"y": 226
+			"x": 296,
+			"y": 326
 		},
 		"colorID": 6
 	},
@@ -184,8 +184,8 @@
 		"tags": "",
 		"body": "Anton:Tin les relous, ils sont encore allés se plaindre à l'admin' !",
 		"position": {
-			"x": 531,
-			"y": 452
+			"x": 302,
+			"y": 552
 		},
 		"colorID": 4
 	},
@@ -194,8 +194,8 @@
 		"tags": "",
 		"body": "Anton:Ils m'ont gavé ces bledards, j'me casse !",
 		"position": {
-			"x": 94,
-			"y": 449
+			"x": -135,
+			"y": 549
 		},
 		"colorID": 4
 	},
@@ -204,8 +204,8 @@
 		"tags": "",
 		"body": "Anton:Il me les pète le WIFI !",
 		"position": {
-			"x": 315,
-			"y": 451
+			"x": 86,
+			"y": 551
 		},
 		"colorID": 4
 	},
@@ -214,8 +214,8 @@
 		"tags": "",
 		"body": "Eleve:Super ! Merci :D",
 		"position": {
-			"x": 2131,
-			"y": -206
+			"x": 1902,
+			"y": -106
 		},
 		"colorID": 0
 	},
@@ -224,8 +224,8 @@
 		"tags": "",
 		"body": "Eleve:J'vais me plaindre à l'administration !",
 		"position": {
-			"x": 2134,
-			"y": 27
+			"x": 1905,
+			"y": 127
 		},
 		"colorID": 0
 	},
@@ -234,8 +234,8 @@
 		"tags": "",
 		"body": "Elève:Dis, tu me prêtes un STMN ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 1876,
-			"y": -467
+			"x": 1647,
+			"y": -367
 		},
 		"colorID": 1
 	},
@@ -244,8 +244,8 @@
 		"tags": "",
 		"body": "Elève:Anton, je peux avoir une raquette de Ping-Pong ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 2104,
-			"y": -466
+			"x": 1875,
+			"y": -366
 		},
 		"colorID": 1
 	},
@@ -254,8 +254,8 @@
 		"tags": "",
 		"body": "Elève:Dis, je peux avoir 100 balles et un Mars ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 2326,
-			"y": -468
+			"x": 2097,
+			"y": -368
 		},
 		"colorID": 1
 	},
@@ -264,8 +264,8 @@
 		"tags": "",
 		"body": "Elève:Antooooon, je peux avoir un contrat de location ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 2547,
-			"y": -470
+			"x": 2318,
+			"y": -370
 		},
 		"colorID": 1
 	},
@@ -274,8 +274,8 @@
 		"tags": "",
 		"body": "Elève:Hé, j'peux avoir un calin ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 2772,
-			"y": -470
+			"x": 2543,
+			"y": -370
 		},
 		"colorID": 1
 	},
@@ -284,8 +284,8 @@
 		"tags": "",
 		"body": "Elève:Anton ! Je voudrais un Best Of de Georges Michael !\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 3001,
-			"y": -471
+			"x": 2772,
+			"y": -371
 		},
 		"colorID": 1
 	},
@@ -294,8 +294,8 @@
 		"tags": "",
 		"body": "Elève:Anton, ch'peux avoir un stage ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 3227,
-			"y": -472
+			"x": 2998,
+			"y": -372
 		},
 		"colorID": 1
 	},
@@ -304,8 +304,8 @@
 		"tags": "",
 		"body": "Elève:Hé ! Je pourrais avoir une dignité stp ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 3451,
-			"y": -475
+			"x": 3222,
+			"y": -375
 		},
 		"colorID": 1
 	},
@@ -314,8 +314,8 @@
 		"tags": "",
 		"body": "Elève:Antooooon ! J'peux avoir les clés de ton coeur ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 3674,
-			"y": -473
+			"x": 3445,
+			"y": -373
 		},
 		"colorID": 1
 	},
@@ -324,18 +324,18 @@
 		"tags": "",
 		"body": "Elève:Anton ! Un double-cheese et une grande frite stp !\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 3895,
-			"y": -475
+			"x": 3666,
+			"y": -375
 		},
 		"colorID": 1
 	},
 	{
 		"title": "ChausseGravier3",
 		"tags": "",
-		"body": "Chaussé Gravier:Ne venez pas encore me parler de Mononomerde !\n[[Mais de suoi vous parlez à la fin ?|ChausseGravier4]]",
+		"body": "Chaussé Gravier:Ne venez pas encore me parler de Mononomerde !\n[[Mais de quoi vous parlez à la fin ?|ChausseGravier4]]",
 		"position": {
-			"x": 751,
-			"y": 223
+			"x": 522,
+			"y": 323
 		},
 		"colorID": 6
 	},
@@ -344,8 +344,8 @@
 		"tags": "",
 		"body": "Elève:Antooon ! J'peux avoir un T-Shirt Batman ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 4125,
-			"y": -475
+			"x": 3896,
+			"y": -375
 		},
 		"colorID": 1
 	},
@@ -354,8 +354,8 @@
 		"tags": "",
 		"body": "Elève:Anton, je peux avoir du son stp ?\n[[Oui|Oui]]\n[[Non|Non]]",
 		"position": {
-			"x": 4343,
-			"y": -477
+			"x": 4114,
+			"y": -377
 		},
 		"colorID": 1
 	},
@@ -364,8 +364,8 @@
 		"tags": "",
 		"body": "Natking:Vous connaissez Fear Window ?\n[[Laissez-moi tranquille !|Natking5]]",
 		"position": {
-			"x": 986,
-			"y": -228
+			"x": 757,
+			"y": -128
 		},
 		"colorID": 2
 	},
@@ -374,8 +374,8 @@
 		"tags": "",
 		"body": "Natking:Un petit Dance Dance Revolution ?",
 		"position": {
-			"x": 1209,
-			"y": -227
+			"x": 980,
+			"y": -127
 		},
 		"colorID": 2
 	},
@@ -384,8 +384,8 @@
 		"tags": "",
 		"body": "Titi Penaud : Mais je vous préviens, je suis nul aux jeux vidéo !\n[[(Comme ça je pourrai gagner !)|TitiPenaud4]]",
 		"position": {
-			"x": 754,
-			"y": -7
+			"x": 525,
+			"y": 93
 		},
 		"colorID": 3
 	},
@@ -394,8 +394,8 @@
 		"tags": "",
 		"body": "Titi Penaud:N'hésitez pas à me contacter si vous avez un souci",
 		"position": {
-			"x": 984,
-			"y": -4
+			"x": 755,
+			"y": 96
 		},
 		"colorID": 3
 	},
@@ -404,8 +404,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Vous savez,\n[[Oui ?|ChausseGravier5]]",
 		"position": {
-			"x": 985,
-			"y": 223
+			"x": 756,
+			"y": 323
 		},
 		"colorID": 6
 	},
@@ -414,8 +414,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Mais dites-moi mon garçon, vous ai-je déjà montré mon désert ?\n[[Non et j'ai pas envie|ChausseGravier6]]",
 		"position": {
-			"x": 1214,
-			"y": 225
+			"x": 985,
+			"y": 325
 		},
 		"colorID": 6
 	},
@@ -424,8 +424,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Aaaaah, quelle magnifique chose que le mouvement !\n[[...|ChausseGravier7]]",
 		"position": {
-			"x": 1444,
-			"y": 226
+			"x": 1215,
+			"y": 326
 		},
 		"colorID": 6
 	},
@@ -434,8 +434,8 @@
 		"tags": "",
 		"body": "Chaussé Gravier:Un petit Dance Dance Revolution ?",
 		"position": {
-			"x": 1696,
-			"y": 226
+			"x": 1467,
+			"y": 326
 		},
 		"colorID": 6
 	}
