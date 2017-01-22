@@ -27,9 +27,10 @@ public class EquipmentStash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis(input) > 0f && IsNear)
+        if (Input.GetAxis(input) > 0f && IsNear && player.GetComponent<CharacterMovement>().hasEquipment == false)
         {
             player.GetComponent<CharacterMovement>().hasEquipment = true;
+            GetComponent<AudioSource>().Play();
         }
     }
 

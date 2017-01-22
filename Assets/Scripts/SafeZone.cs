@@ -32,6 +32,10 @@ public class SafeZone : MonoBehaviour {
             if (IsNear)
             {
                 Jauge.Flemme.Add(-5);
+                if(!GetComponent<AudioSource>().isPlaying)
+                {
+                    GetComponent<AudioSource>().Play();
+                }
             }
             yield return new WaitForSeconds(1f);
         }

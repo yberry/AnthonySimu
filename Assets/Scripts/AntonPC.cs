@@ -37,6 +37,7 @@ public class AntonPC : MonoBehaviour
     {
         if (Input.GetAxis(input) > 0f && IsNear && studentManager.isPornLoading && !websitesOn)
         {
+            GetComponent<AudioSource>().Play();
             websitesOn = true;
             websites.GetComponent<ListWebsites>().Show();
             player.GetComponent<CharacterMovement>().canMove = false;
