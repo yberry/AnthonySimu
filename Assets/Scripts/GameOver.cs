@@ -15,7 +15,7 @@ public class GameOver : MonoBehaviour {
     {
         if (!DialogueRunner.runner.isDialogueRunning)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("MenuPrincipale");
         }
     }
 }
