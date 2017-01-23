@@ -14,12 +14,7 @@ public class LoadCreditOnClick : MonoBehaviour {
 
     public void CreditOnClick()
     {
-        if (credit.activeSelf == false)
-        {
-            credit.SetActive(true);
-            canvas.SetActive(false);
-        }
-       
+        credit.SetActive(true);
     }
 
 }
